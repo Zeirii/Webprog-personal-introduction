@@ -2,166 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About Me</title>
+  <title>Kristoff Aadryk L. Viray</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="page">
     <header class="hero">
       <div class="hero-text">
-        <h1>Hi, I'm Your Name</h1>
-        <p>Front-end dev • Gamer • Music lover</p>
+        <h1>Hi, I'm Kristoff Aadryk L. Viray</h1>
+        <p class="subtitle">
+          19-year-old Second Year Computer Science student  
+          specializing in Cybersecurity and Digital Forensics at Asia Pacific College.
+        </p>
+        <p class="subtitle smaller">
+          Assistant Director of Marketing of JISSA and JPCS • Antipolo-based • Chill, fun-loving, and always down for org work.
+        </p>
       </div>
-      <div class="hero-card">
-        <img src="https://via.placeholder.com/160" alt="Profile" class="avatar" />
-        <button class="hero-button" id="themeToggle">Toggle Theme</button>
+
+      <!-- Pixel chibi that waves -->
+      <div class="chibi-wrapper">
+        <div class="chibi">
+          <div class="chibi-head">
+            <div class="chibi-face">
+              <span class="eye eye-left"></span>
+              <span class="eye eye-right"></span>
+              <span class="mouth"></span>
+            </div>
+          </div>
+          <div class="chibi-body">
+            <div class="chibi-arm chibi-arm-left"></div>
+            <div class="chibi-arm chibi-arm-right"></div>
+            <div class="chibi-torso"></div>
+          </div>
+        </div>
+        <p class="chibi-caption">Nice to meet you! 👋</p>
       </div>
     </header>
 
     <main>
-      <!-- Slider: Skill Levels -->
+      <!-- Confidence section -->
       <section class="card">
-        <h2>Skill Sliders</h2>
-        <p>Drag the sliders to set how confident you feel in each skill.</p>
+        <h2>Tech Confidence Levels</h2>
+        <p class="muted">
+          These are rough confidence percentages for the tools and languages used most often.
+        </p>
 
-        <div class="slider-row">
-          <label for="htmlSkill">HTML</label>
-          <input type="range" id="htmlSkill" min="0" max="100" value="80" />
-          <span class="slider-value" id="htmlValue">80%</span>
-        </div>
+        <div class="confidence-grid">
+          <div class="confidence-item">
+            <span class="label">HTML</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 75%;"></div>
+            </div>
+            <span class="percent">75%</span>
+          </div>
 
-        <div class="slider-row">
-          <label for="cssSkill">CSS</label>
-          <input type="range" id="cssSkill" min="0" max="100" value="70" />
-          <span class="slider-value" id="cssValue">70%</span>
-        </div>
+          <div class="confidence-item">
+            <span class="label">Java</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 60%;"></div>
+            </div>
+            <span class="percent">60%</span>
+          </div>
 
-        <div class="slider-row">
-          <label for="jsSkill">JavaScript</label>
-          <input type="range" id="jsSkill" min="0" max="100" value="60" />
-          <span class="slider-value" id="jsValue">60%</span>
-        </div>
-      </section>
+          <div class="confidence-item">
+            <span class="label">Python</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 70%;"></div>
+            </div>
+            <span class="percent">70%</span>
+          </div>
 
-      <!-- Interactable “Mood” slider -->
-      <section class="card">
-        <h2>Current Mood</h2>
-        <p>Move the slider to change the mood color and text.</p>
+          <div class="confidence-item">
+            <span class="label">CMD</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 65%;"></div>
+            </div>
+            <span class="percent">65%</span>
+          </div>
 
-        <div class="mood-wrapper">
-          <input type="range" id="moodSlider" min="0" max="100" value="50" />
-          <div class="mood-display" id="moodDisplay">
-            Feeling pretty chill 😌
+          <div class="confidence-item">
+            <span class="label">Kali Linux</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 70%;"></div>
+            </div>
+            <span class="percent">70%</span>
+          </div>
+
+          <div class="confidence-item">
+            <span class="label">CSS</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 50%;"></div>
+            </div>
+            <span class="percent">50%</span>
           </div>
         </div>
       </section>
 
-      <!-- Clickable interests -->
+      <!-- About & activities -->
       <section class="card">
-        <h2>Interests</h2>
-        <p>Click a chip to highlight what you’re into right now.</p>
-
-        <div class="chips" id="interestChips">
-          <button class="chip active" data-text="Coding cool side projects.">
-            Coding
-          </button>
-          <button class="chip" data-text="Grinding games and chasing high scores.">
-            Gaming
-          </button>
-          <button class="chip" data-text="Discovering new tracks and artists.">
-            Music
-          </button>
-          <button class="chip" data-text="Watching anime and cool series.">
-            Anime
-          </button>
-        </div>
-
-        <p class="chip-description" id="chipDescription">
-          Coding cool side projects.
+        <h2>About Kristoff</h2>
+        <p>
+          Currently 19 and in second year CS at Asia Pacific College, specializing in Cybersecurity and Digital Forensics, always exploring how systems break and how to secure them better.
+        </p>
+        <p>
+          Lives in Antipolo and loves to chill, have fun, and stay laid-back even when juggling academics, org work, and tech projects.
         </p>
       </section>
 
-      <!-- Expandable details -->
       <section class="card">
-        <h2>More About Me</h2>
-        <details class="details-block" open>
-          <summary>My background</summary>
-          <p>I’m a CS student who loves building clean, interactive web experiences.</p>
-        </details>
-        <details class="details-block">
-          <summary>What I’m learning</summary>
-          <p>Diving deeper into full-stack dev, algorithms, and UI/UX design.</p>
-        </details>
-        <details class="details-block">
-          <summary>Goals for this year</summary>
-          <p>Ship more personal projects and sharpen problem-solving skills.</p>
-        </details>
+        <h2>Organizations & Competitions</h2>
+        <p>
+          Actively participates in cybersecurity competitions such as the Trend Micro UCTF, using them as a playground to sharpen offensive and defensive skills.
+        </p>
+        <p>
+          Serves as the Assistant Director of Marketing for both JISSA (Junior Information Systems Security Association) and JPCS (Junior Philippine Computer Society) at Asia Pacific College, balancing creative campaigns with technical work.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>What I Enjoy</h2>
+        <p>
+          Loves to mix productivity with good vibes—chilling, having fun, and making org work feel less like work and more like a shared project with friends.
+        </p>
+        <p>
+          Outside of classes and orgs, enjoys gaming and music, using both as a reset button after long days of code, configs, and CTF challenges.
+        </p>
       </section>
     </main>
   </div>
-
-  <script>
-    // Skill sliders values
-    const skillSliders = [
-      { slider: "htmlSkill", label: "htmlValue" },
-      { slider: "cssSkill", label: "cssValue" },
-      { slider: "jsSkill", label: "jsValue" }
-    ];
-
-    skillSliders.forEach(({ slider, label }) => {
-      const range = document.getElementById(slider);
-      const valueLabel = document.getElementById(label);
-      const update = () => {
-        valueLabel.textContent = range.value + "%";
-      };
-      range.addEventListener("input", update);
-      update();
-    });
-
-    // Mood slider
-    const moodSlider = document.getElementById("moodSlider");
-    const moodDisplay = document.getElementById("moodDisplay");
-
-    function updateMood(value) {
-      let text;
-      if (value < 33) {
-        text = "Feeling chill and relaxed 😌";
-      } else if (value < 66) {
-        text = "Motivated and focused 💪";
-      } else {
-        text = "Hyped and excited ⚡";
-      }
-
-      const hue = 200 + (value / 100) * 100; // blue → purple range
-      moodDisplay.textContent = text;
-      moodDisplay.style.background = `hsl(${hue}, 80%, 55%)`;
-    }
-
-    moodSlider.addEventListener("input", (e) => {
-      updateMood(e.target.value);
-    });
-    updateMood(moodSlider.value);
-
-    // Interest chips
-    const chipsContainer = document.getElementById("interestChips");
-    const chipDescription = document.getElementById("chipDescription");
-
-    chipsContainer.addEventListener("click", (e) => {
-      if (!e.target.classList.contains("chip")) return;
-
-      document
-        .querySelectorAll(".chip")
-        .forEach((chip) => chip.classList.remove("active"));
-
-      e.target.classList.add("active");
-      chipDescription.textContent = e.target.getAttribute("data-text");
-    });
-
-    // Theme toggle
-    const themeToggle = document.getElementById("themeToggle");
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-    });
-  </script>
 </body>
 </html>
