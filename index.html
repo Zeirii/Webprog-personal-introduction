@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Me</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-text">
+        <h1>Hi, I'm Your Name</h1>
+        <p>Front-end dev • Gamer • Music lover</p>
+      </div>
+      <div class="hero-card">
+        <img src="https://via.placeholder.com/160" alt="Profile" class="avatar" />
+        <button class="hero-button" id="themeToggle">Toggle Theme</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Slider: Skill Levels -->
+      <section class="card">
+        <h2>Skill Sliders</h2>
+        <p>Drag the sliders to set how confident you feel in each skill.</p>
+
+        <div class="slider-row">
+          <label for="htmlSkill">HTML</label>
+          <input type="range" id="htmlSkill" min="0" max="100" value="80" />
+          <span class="slider-value" id="htmlValue">80%</span>
+        </div>
+
+        <div class="slider-row">
+          <label for="cssSkill">CSS</label>
+          <input type="range" id="cssSkill" min="0" max="100" value="70" />
+          <span class="slider-value" id="cssValue">70%</span>
+        </div>
+
+        <div class="slider-row">
+          <label for="jsSkill">JavaScript</label>
+          <input type="range" id="jsSkill" min="0" max="100" value="60" />
+          <span class="slider-value" id="jsValue">60%</span>
+        </div>
+      </section>
+
+      <!-- Interactable “Mood” slider -->
+      <section class="card">
+        <h2>Current Mood</h2>
+        <p>Move the slider to change the mood color and text.</p>
+
+        <div class="mood-wrapper">
+          <input type="range" id="moodSlider" min="0" max="100" value="50" />
+          <div class="mood-display" id="moodDisplay">
+            Feeling pretty chill 😌
+          </div>
+        </div>
+      </section>
+
+      <!-- Clickable interests -->
+      <section class="card">
+        <h2>Interests</h2>
+        <p>Click a chip to highlight what you’re into right now.</p>
+
+        <div class="chips" id="interestChips">
+          <button class="chip active" data-text="Coding cool side projects.">
+            Coding
+          </button>
+          <button class="chip" data-text="Grinding games and chasing high scores.">
+            Gaming
+          </button>
+          <button class="chip" data-text="Discovering new tracks and artists.">
+            Music
+          </button>
+          <button class="chip" data-text="Watching anime and cool series.">
+            Anime
+          </button>
+        </div>
+
+        <p class="chip-description" id="chipDescription">
+          Coding cool side projects.
+        </p>
+      </section>
+
+      <!-- Expandable details -->
+      <section class="card">
+        <h2>More About Me</h2>
+        <details class="details-block" open>
+          <summary>My background</summary>
+          <p>I’m a CS student who loves building clean, interactive web experiences.</p>
+        </details>
+        <details class="details-block">
+          <summary>What I’m learning</summary>
+          <p>Diving deeper into full-stack dev, algorithms, and UI/UX design.</p>
+        </details>
+        <details class="details-block">
+          <summary>Goals for this year</summary>
+          <p>Ship more personal projects and sharpen problem-solving skills.</p>
+        </details>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Skill sliders values
+    const skillSliders = [
+      { slider: "htmlSkill", label: "htmlValue" },
+      { slider: "cssSkill", label: "cssValue" },
+      { slider: "jsSkill", label: "jsValue" }
+    ];
+
+    skillSliders.forEach(({ slider, label }) => {
+      const range = document.getElementById(slider);
+      const valueLabel = document.getElementById(label);
+      const update = () => {
+        valueLabel.textContent = range.value + "%";
+      };
+      range.addEventListener("input", update);
+      update();
+    });
+
+    // Mood slider
+    const moodSlider = document.getElementById("moodSlider");
+    const moodDisplay = document.getElementById("moodDisplay");
+
+    function updateMood(value) {
+      let text;
+      if (value < 33) {
+        text = "Feeling chill and relaxed 😌";
+      } else if (value < 66) {
+        text = "Motivated and focused 💪";
+      } else {
+        text = "Hyped and excited ⚡";
+      }
+
+      const hue = 200 + (value / 100) * 100; // blue → purple range
+      moodDisplay.textContent = text;
+      moodDisplay.style.background = `hsl(${hue}, 80%, 55%)`;
+    }
+
+    moodSlider.addEventListener("input", (e) => {
+      updateMood(e.target.value);
+    });
+    updateMood(moodSlider.value);
+
+    // Interest chips
+    const chipsContainer = document.getElementById("interestChips");
+    const chipDescription = document.getElementById("chipDescription");
+
+    chipsContainer.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("chip")) return;
+
+      document
+        .querySelectorAll(".chip")
+        .forEach((chip) => chip.classList.remove("active"));
+
+      e.target.classList.add("active");
+      chipDescription.textContent = e.target.getAttribute("data-text");
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+  </script>
+</body>
+</html>
