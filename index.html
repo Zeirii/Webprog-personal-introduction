@@ -128,7 +128,42 @@
           Outside of classes and orgs, enjoys gaming and music, using both as a reset button after long days of code, configs, and CTF challenges.
         </p>
       </section>
+
+      <!-- Magnetic button section -->
+      <section class="card">
+        <h2>Say Hi</h2>
+        <p class="muted">
+          Curious about my projects, org work, or just want to connect? Hover over the button below.
+        </p>
+
+        <div class="magnet-wrapper">
+          <button class="magnet-btn">
+            Hover to Connect
+          </button>
+        </div>
+      </section>
     </main>
   </div>
+
+  <!-- Magnetic button script -->
+  <script>
+    const wrapper = document.querySelector(".magnet-wrapper");
+    const btn = document.querySelector(".magnet-btn");
+    const strength = 0.25; // how strongly it follows the cursor
+
+    if (wrapper && btn) {
+      wrapper.addEventListener("mousemove", (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - (rect.left + rect.width / 2);
+        const y = e.clientY - (rect.top + rect.height / 2);
+
+        btn.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+      });
+
+      wrapper.addEventListener("mouseleave", () => {
+        btn.style.transform = "translate(0, 0)";
+      });
+    }
+  </script>
 </body>
 </html>
