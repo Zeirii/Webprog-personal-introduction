@@ -1,16 +1,15 @@
 /* Midnight blue theme with soft contrasts and pixel vibe */
-
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap");
 
 :root {
-  --bg: #020824;           /* deep midnight blue */
+  --bg: #020824;
   --bg-soft: #050f2f;
   --bg-softer: #0a163d;
-  --accent: #5b9dff;       /* soft blue */
+  --accent: #5b9dff;
   --accent-soft: rgba(91, 157, 255, 0.16);
-  --accent-secondary: #fbbf77; /* warm highlight */
-  --text-main: #e4ecff;    /* off-white */
-  --text-soft: #b7c4e6;    /* muted */
+  --accent-secondary: #fbbf77;
+  --text-main: #e4ecff;
+  --text-soft: #b7c4e6;
   --text-faint: #7381a8;
   --border-soft: rgba(129, 140, 248, 0.4);
   --card-radius: 18px;
@@ -38,7 +37,6 @@ body {
 }
 
 /* Page container */
-
 .page {
   width: 100%;
   max-width: 980px;
@@ -51,12 +49,7 @@ body {
 }
 
 /* Hero section */
-
 .hero {
-  display: flex;
-  gap: 26px;
-  align-items: center;
-  justify-content: space-between;
   padding: 18px 18px 14px;
   border-radius: 20px;
   background:
@@ -64,6 +57,23 @@ body {
     radial-gradient(circle at bottom right, rgba(91, 157, 255, 0.18) 0, transparent 55%),
     linear-gradient(135deg, rgba(5, 15, 47, 0.96), rgba(4, 11, 40, 0.98));
   border: 1px solid rgba(129, 140, 248, 0.55);
+}
+
+.main-nav {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.main-nav a {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
 }
 
 .hero-text h1 {
@@ -85,8 +95,33 @@ body {
   color: var(--text-faint);
 }
 
-/* Chibi section */
+/* Hero layout: text + right side */
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+}
 
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Real photo in hero, small */
+.hero-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
+}
+
+/* Chibi section */
 .chibi-wrapper {
   display: flex;
   flex-direction: column;
@@ -100,8 +135,7 @@ body {
   color: var(--text-faint);
 }
 
-/* Pixel-style chibi using simple shapes */
-
+/* Pixel-style chibi */
 .chibi {
   position: relative;
   width: 96px;
@@ -111,7 +145,6 @@ body {
 }
 
 /* Head */
-
 .chibi-head {
   position: absolute;
   top: 0;
@@ -125,7 +158,6 @@ body {
 }
 
 /* Hair */
-
 .chibi-head::before {
   content: "";
   position: absolute;
@@ -140,7 +172,6 @@ body {
 }
 
 /* Face */
-
 .chibi-face {
   position: absolute;
   inset: 16px 8px 10px;
@@ -175,7 +206,6 @@ body {
 }
 
 /* Body */
-
 .chibi-body {
   position: absolute;
   top: 56px;
@@ -186,7 +216,6 @@ body {
 }
 
 /* Torso */
-
 .chibi-torso {
   position: absolute;
   top: 8px;
@@ -199,7 +228,6 @@ body {
 }
 
 /* Arms */
-
 .chibi-arm {
   position: absolute;
   top: 10px;
@@ -220,7 +248,6 @@ body {
 }
 
 /* Wave animation */
-
 @keyframes wave {
   0% { transform: rotate(0deg); }
   25% { transform: rotate(-18deg); }
@@ -230,7 +257,6 @@ body {
 }
 
 /* Main layout */
-
 main {
   margin-top: 22px;
   display: grid;
@@ -238,7 +264,6 @@ main {
 }
 
 /* Cards */
-
 .card {
   background: radial-gradient(circle at top left, #0c1c4d 0, #050f2f 50%, #040a23 100%);
   border-radius: var(--card-radius);
@@ -265,7 +290,6 @@ main {
 }
 
 /* Confidence bars */
-
 .confidence-grid {
   margin-top: 10px;
   display: grid;
@@ -311,7 +335,6 @@ main {
 }
 
 /* Magnetic button */
-
 .magnet-wrapper {
   display: inline-flex;
   justify-content: center;
@@ -345,20 +368,19 @@ main {
 }
 
 /* Responsive */
-
 @media (max-width: 780px) {
   .page {
     padding: 20px 14px 22px;
     border-radius: 20px;
   }
 
-  .hero {
+  .hero-content {
     flex-direction: column;
     align-items: flex-start;
   }
 
   .chibi-wrapper {
-    align-self: flex-end;
+    align-self: flex-start;
   }
 
   .confidence-item {

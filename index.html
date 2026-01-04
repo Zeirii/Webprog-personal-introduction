@@ -20,9 +20,9 @@
 
       <div class="hero-content">
         <div class="hero-text">
-          <h1>Hi, I'm Kristoff Aadryk L. Viray</h1>
+          <h1>Hi, I’m Kristoff Aadryk L. Viray</h1>
           <p class="subtitle">
-            19-year-old Second Year Computer Science student  
+            19-year-old Second Year Computer Science student
             specializing in Cybersecurity and Digital Forensics at Asia Pacific College.
           </p>
           <p class="subtitle smaller">
@@ -30,23 +30,28 @@
           </p>
         </div>
 
-        <!-- Pixel chibi that waves -->
-        <div class="chibi-wrapper" aria-hidden="true">
-          <div class="chibi">
-            <div class="chibi-head">
-              <div class="chibi-face">
-                <span class="eye eye-left"></span>
-                <span class="eye eye-right"></span>
-                <span class="mouth"></span>
+        <div class="hero-right">
+          <!-- Small real photo -->
+          <img src="Kristoff.jpg" alt="Photo of Kristoff" class="hero-photo" />
+
+          <!-- Pixel chibi -->
+          <div class="chibi-wrapper" aria-hidden="true">
+            <div class="chibi">
+              <div class="chibi-head">
+                <div class="chibi-face">
+                  <span class="eye eye-left"></span>
+                  <span class="eye eye-right"></span>
+                  <span class="mouth"></span>
+                </div>
+              </div>
+              <div class="chibi-body">
+                <div class="chibi-arm chibi-arm-left"></div>
+                <div class="chibi-arm chibi-arm-right"></div>
+                <div class="chibi-torso"></div>
               </div>
             </div>
-            <div class="chibi-body">
-              <div class="chibi-arm chibi-arm-left"></div>
-              <div class="chibi-arm chibi-arm-right"></div>
-              <div class="chibi-torso"></div>
-            </div>
+            <p class="chibi-caption">Nice to meet you! 👋</p>
           </div>
-          <p class="chibi-caption">Nice to meet you! 👋</p>
         </div>
       </div>
     </header>
@@ -110,13 +115,9 @@
         </div>
       </section>
 
-      <!-- About & activities -->
+      <!-- About -->
       <section class="card" id="about">
         <h2>About Kristoff</h2>
-
-        <!-- Your photo -->
-        <img src="Kristoff.jpg" alt="Photo of Kristoff" class="profile-photo" />
-
         <p>
           Currently 19 and in second year CS at Asia Pacific College, specializing in Cybersecurity and Digital Forensics, always exploring how systems break and how to secure them better.
         </p>
@@ -125,6 +126,7 @@
         </p>
       </section>
 
+      <!-- Orgs -->
       <section class="card" id="orgs">
         <h2>Organizations & Competitions</h2>
         <p>
@@ -135,6 +137,7 @@
         </p>
       </section>
 
+      <!-- Interests -->
       <section class="card" id="interests">
         <h2>What I Enjoy</h2>
         <p>
@@ -145,7 +148,7 @@
         </p>
       </section>
 
-      <!-- Magnetic button section -->
+      <!-- Magnetic button -->
       <section class="card" id="contact">
         <h2>Say Hi</h2>
         <p class="muted">
@@ -159,7 +162,7 @@
         </div>
       </section>
 
-      <!-- Resource documentation -->
+      <!-- Resources -->
       <section class="card" id="resources">
         <h2>Resource Documentation</h2>
         <p class="muted">
@@ -183,7 +186,7 @@
   <script>
     const wrapper = document.querySelector(".magnet-wrapper");
     const btn = document.querySelector(".magnet-btn");
-    const strength = 0.25; // how strongly it follows the cursor
+    const strength = 0.25;
 
     if (wrapper && btn) {
       wrapper.addEventListener("mousemove", (e) => {
