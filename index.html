@@ -3,55 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <title>Kristoff Aadryk L. Viray</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal website of Kristoff Aadryk L. Viray, 19-year-old Computer Science student specializing in Cybersecurity and Digital Forensics." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="page">
-    <header class="hero">
-      <div class="hero-text">
-        <h1>Hi, I'm Kristoff Aadryk L. Viray</h1>
-        <p class="subtitle">
-          19-year-old Second Year Computer Science student  
-          specializing in Cybersecurity and Digital Forensics at Asia Pacific College.
-        </p>
-        <p class="subtitle smaller">
-          Assistant Director of Marketing of JISSA and JPCS • Antipolo-based • Chill, fun-loving, and always down for org work.
-        </p>
-      </div>
+    <header class="hero" id="top">
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#tech">Tech Skills</a>
+        <a href="#orgs">Organizations</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Say Hi</a>
+      </nav>
 
-      <!-- Pixel chibi that waves -->
-      <div class="chibi-wrapper">
-        <div class="chibi">
-          <div class="chibi-head">
-            <div class="chibi-face">
-              <span class="eye eye-left"></span>
-              <span class="eye eye-right"></span>
-              <span class="mouth"></span>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Hi, I'm Kristoff Aadryk L. Viray</h1>
+          <p class="subtitle">
+            19-year-old Second Year Computer Science student  
+            specializing in Cybersecurity and Digital Forensics at Asia Pacific College.
+          </p>
+          <p class="subtitle smaller">
+            Assistant Director of Marketing of JISSA and JPCS • Antipolo-based • Chill, fun-loving, and always down for org work.
+          </p>
+        </div>
+
+        <!-- Pixel chibi that waves -->
+        <div class="chibi-wrapper" aria-hidden="true">
+          <div class="chibi">
+            <div class="chibi-head">
+              <div class="chibi-face">
+                <span class="eye eye-left"></span>
+                <span class="eye eye-right"></span>
+                <span class="mouth"></span>
+              </div>
+            </div>
+            <div class="chibi-body">
+              <div class="chibi-arm chibi-arm-left"></div>
+              <div class="chibi-arm chibi-arm-right"></div>
+              <div class="chibi-torso"></div>
             </div>
           </div>
-          <div class="chibi-body">
-            <div class="chibi-arm chibi-arm-left"></div>
-            <div class="chibi-arm chibi-arm-right"></div>
-            <div class="chibi-torso"></div>
-          </div>
+          <p class="chibi-caption">Nice to meet you! 👋</p>
         </div>
-        <p class="chibi-caption">Nice to meet you! 👋</p>
       </div>
     </header>
 
     <main>
-      <!-- Confidence section -->
-      <section class="card">
+      <!-- Tech confidence section -->
+      <section class="card" id="tech">
         <h2>Tech Confidence Levels</h2>
         <p class="muted">
-          These are rough confidence percentages for the tools and languages used most often.
+          These are rough confidence percentages for the tools and languages I use most often.
         </p>
 
         <div class="confidence-grid">
           <div class="confidence-item">
             <span class="label">HTML</span>
             <div class="bar-track">
-              <div class="bar-fill" style="width: 75%;"></div>
+              <div class="bar-fill bar-75"></div>
             </div>
             <span class="percent">75%</span>
           </div>
@@ -59,7 +71,7 @@
           <div class="confidence-item">
             <span class="label">Java</span>
             <div class="bar-track">
-              <div class="bar-fill" style="width: 60%;"></div>
+              <div class="bar-fill bar-60"></div>
             </div>
             <span class="percent">60%</span>
           </div>
@@ -67,7 +79,7 @@
           <div class="confidence-item">
             <span class="label">Python</span>
             <div class="bar-track">
-              <div class="bar-fill" style="width: 70%;"></div>
+              <div class="bar-fill bar-70"></div>
             </div>
             <span class="percent">70%</span>
           </div>
@@ -75,7 +87,7 @@
           <div class="confidence-item">
             <span class="label">CMD</span>
             <div class="bar-track">
-              <div class="bar-fill" style="width: 65%;"></div>
+              <div class="bar-fill bar-65"></div>
             </div>
             <span class="percent">65%</span>
           </div>
@@ -83,7 +95,7 @@
           <div class="confidence-item">
             <span class="label">Kali Linux</span>
             <div class="bar-track">
-              <div class="bar-fill" style="width: 70%;"></div>
+              <div class="bar-fill bar-70"></div>
             </div>
             <span class="percent">70%</span>
           </div>
@@ -91,7 +103,7 @@
           <div class="confidence-item">
             <span class="label">CSS</span>
             <div class="bar-track">
-              <div class="bar-fill" style="width: 50%;"></div>
+              <div class="bar-fill bar-50"></div>
             </div>
             <span class="percent">50%</span>
           </div>
@@ -99,50 +111,68 @@
       </section>
 
       <!-- About & activities -->
-      <section class="card">
+      <section class="card" id="about">
         <h2>About Kristoff</h2>
         <p>
-          Currently 19 and in second year CS at Asia Pacific College, specializing in Cybersecurity and Digital Forensics, always exploring how systems break and how to secure them better.
+          I am a second-year Computer Science student at Asia Pacific College, specializing in Cybersecurity and Digital Forensics, always exploring how systems break and how to secure them better.
         </p>
         <p>
-          Lives in Antipolo and loves to chill, have fun, and stay laid-back even when juggling academics, org work, and tech projects.
+          I live in Antipolo and try to stay laid-back even when juggling academics, org work, and tech projects.
         </p>
       </section>
 
-      <section class="card">
+      <section class="card" id="orgs">
         <h2>Organizations & Competitions</h2>
         <p>
-          Actively participates in cybersecurity competitions such as the Trend Micro UCTF, using them as a playground to sharpen offensive and defensive skills.
+          I actively participate in cybersecurity competitions such as the Trend Micro UCTF, using them as a playground to sharpen offensive and defensive skills.
         </p>
         <p>
-          Serves as the Assistant Director of Marketing for both JISSA (Junior Information Systems Security Association) and JPCS (Junior Philippine Computer Society) at Asia Pacific College, balancing creative campaigns with technical work.
+          I currently serve as the Assistant Director of Marketing for both JISSA (Junior Information Systems Security Association) and JPCS (Junior Philippine Computer Society) at Asia Pacific College.
         </p>
       </section>
 
-      <section class="card">
+      <section class="card" id="interests">
         <h2>What I Enjoy</h2>
         <p>
-          Loves to mix productivity with good vibes—chilling, having fun, and making org work feel less like work and more like a shared project with friends.
+          I like mixing productivity with good vibes—turning org work into shared projects with friends instead of pure grind.
         </p>
         <p>
-          Outside of classes and orgs, enjoys gaming and music, using both as a reset button after long days of code, configs, and CTF challenges.
+          Outside of classes and orgs, I enjoy gaming and music as a reset button after long days of code, configs, and CTF challenges.
         </p>
       </section>
 
       <!-- Magnetic button section -->
-      <section class="card">
+      <section class="card" id="contact">
         <h2>Say Hi</h2>
         <p class="muted">
           Curious about my projects, org work, or just want to connect? Hover over the button below.
         </p>
 
         <div class="magnet-wrapper">
-          <button class="magnet-btn">
+          <button class="magnet-btn" type="button">
             Hover to Connect
           </button>
         </div>
       </section>
+
+      <!-- Resource documentation -->
+      <section class="card" id="resources">
+        <h2>Resource Documentation</h2>
+        <p class="muted">
+          Credits for references and inspirations used while creating this site.
+        </p>
+        <ul>
+          <li>HTML and CSS reference: MDN Web Docs.</li>
+          <li>HTML/CSS validation: W3C Markup Validation Service and W3C CSS Validator.</li>
+          <li>General design inspiration: Various personal portfolio sites and web design articles.</li>
+        </ul>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Kristoff Aadryk L. Viray. All rights reserved.</p>
+      <p><a href="#top">Back to top</a></p>
+    </footer>
   </div>
 
   <!-- Magnetic button script -->
