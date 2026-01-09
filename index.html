@@ -154,58 +154,60 @@
         </p>
       </section>
 
-      <!-- Magnetic button + social links -->
+      <!-- Magnetic button + social links (click to reveal) -->
       <section class="card" id="contact">
         <h2>Say Hi</h2>
         <p class="muted">
-          Curious about my projects, org work, or just want to connect? Hover over the button and pick a platform below.
+          Curious about my projects, org work, or just want to connect? Click the button to reveal where to reach me.
         </p>
 
-        <div class="magnet-wrapper">
-          <button class="magnet-btn" type="button">
-            Hover to Connect
-          </button>
-        </div>
+        <div class="connect-block">
+          <div class="magnet-wrapper">
+            <button class="magnet-btn" type="button" id="connect-toggle">
+              Hover to Connect
+            </button>
+          </div>
 
-        <div class="social-row">
-          <a
-            class="social-pill ig"
-            href="https://www.instagram.com/zeirii_/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="pill-glow"></span>
-            <span class="pill-inner">
-              <i class="fa-brands fa-instagram"></i>
-              <span>Instagram</span>
-            </span>
-          </a>
+          <div class="social-row" id="social-options">
+            <a
+              class="social-pill ig"
+              href="https://www.instagram.com/zeirii_/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="pill-glow"></span>
+              <span class="pill-inner">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+              </span>
+            </a>
 
-          <a
-            class="social-pill fb"
-            href="https://www.facebook.com/Kristoff.Viray.5/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="pill-glow"></span>
-            <span class="pill-inner">
-              <i class="fa-brands fa-facebook-f"></i>
-              <span>Facebook</span>
-            </span>
-          </a>
+            <a
+              class="social-pill fb"
+              href="https://www.facebook.com/Kristoff.Viray.5/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="pill-glow"></span>
+              <span class="pill-inner">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span>Facebook</span>
+              </span>
+            </a>
 
-          <a
-            class="social-pill li"
-            href="https://www.linkedin.com/in/kristoff-aadryk-viray/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="pill-glow"></span>
-            <span class="pill-inner">
-              <i class="fa-brands fa-linkedin-in"></i>
-              <span>LinkedIn</span>
-            </span>
-          </a>
+            <a
+              class="social-pill li"
+              href="https://www.linkedin.com/in/kristoff-aadryk-viray/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="pill-glow"></span>
+              <span class="pill-inner">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -229,7 +231,7 @@
     </footer>
   </div>
 
-  <!-- Magnetic button script -->
+  <!-- Magnetic button + toggle script -->
   <script>
     const wrapper = document.querySelector(".magnet-wrapper");
     const btn = document.querySelector(".magnet-btn");
@@ -246,6 +248,16 @@
 
       wrapper.addEventListener("mouseleave", () => {
         btn.style.transform = "translate(0, 0)";
+      });
+    }
+
+    // Toggle social options on click
+    const toggleBtn = document.getElementById("connect-toggle");
+    const socialOptions = document.getElementById("social-options");
+
+    if (toggleBtn && socialOptions) {
+      toggleBtn.addEventListener("click", () => {
+        socialOptions.classList.toggle("is-visible");
       });
     }
   </script>
