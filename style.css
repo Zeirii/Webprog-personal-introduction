@@ -50,15 +50,44 @@ body {
 
 /* Hero section */
 .hero {
-  padding: 18px 18px 14px;
+  padding: 18px 18px 18px;
   border-radius: 20px;
   background:
     radial-gradient(circle at top left, rgba(91, 157, 255, 0.6) 0, transparent 55%),
     radial-gradient(circle at bottom right, rgba(91, 157, 255, 0.18) 0, transparent 55%),
     linear-gradient(135deg, rgba(5, 15, 47, 0.96), rgba(4, 11, 40, 0.98));
   border: 1px solid rgba(129, 140, 248, 0.55);
+  position: relative;
+  overflow: hidden;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 10% 0, rgba(91, 157, 255, 0.16), transparent 55%),
+    radial-gradient(circle at 90% 100%, rgba(251, 191, 119, 0.12), transparent 55%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Eyebrow text */
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+  opacity: 0.85;
+}
+
+/* Nav */
 .main-nav {
   margin-bottom: 10px;
   display: flex;
@@ -70,10 +99,20 @@ body {
   font-size: 0.85rem;
   color: var(--accent);
   text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.76);
+  border: 1px solid rgba(129, 140, 248, 0.45);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .main-nav a:hover {
-  text-decoration: underline;
+  background: rgba(37, 99, 235, 0.3);
+  border-color: rgba(191, 219, 254, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.8);
 }
 
 .hero-text h1 {
@@ -111,7 +150,31 @@ body {
   gap: 12px;
 }
 
-/* Real photo in hero, small */
+/* Real photo with orbit effect */
+.photo-orbit {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: grid;
+  place-items: center;
+}
+
+.photo-glow {
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 130deg,
+    rgba(91, 157, 255, 0.1),
+    rgba(251, 191, 119, 0.3),
+    rgba(91, 157, 255, 0.1)
+  );
+  filter: blur(10px);
+  opacity: 0.9;
+  animation: orbit 12s linear infinite;
+}
+
 .hero-photo {
   width: 120px;
   height: 120px;
@@ -119,6 +182,14 @@ body {
   object-fit: cover;
   border: 3px solid rgba(255, 255, 255, 0.35);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Chibi section */
@@ -285,6 +356,17 @@ main {
   line-height: 1.6;
 }
 
+.card ul {
+  padding-left: 18px;
+  margin: 6px 0 0;
+}
+
+.card li {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .muted {
   color: var(--text-faint);
 }
@@ -329,6 +411,12 @@ main {
   box-shadow: 0 0 12px rgba(91, 157, 255, 0.6);
 }
 
+.bar-50 { width: 50%; }
+.bar-60 { width: 60%; }
+.bar-65 { width: 65%; }
+.bar-70 { width: 70%; }
+.bar-75 { width: 75%; }
+
 .percent {
   text-align: right;
   color: var(--accent-secondary);
@@ -339,7 +427,7 @@ main {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 32px 0 8px;
+  padding: 24px 0 10px;
 }
 
 .magnet-btn {
@@ -367,8 +455,113 @@ main {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
 }
 
+/* Social pills row */
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Social pill base */
+.social-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+.pill-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  opacity: 0.65;
+  filter: blur(10px);
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: -1;
+}
+
+.pill-inner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 255, 0.6);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 64, 175, 0.96));
+  color: var(--text-main);
+  font-size: 0.83rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.8);
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition), background var(--transition), color var(--transition);
+}
+
+.pill-inner i {
+  font-size: 0.95rem;
+}
+
+/* Individual colors */
+.social-pill.ig .pill-glow {
+  background: radial-gradient(circle at 0 0, #f58529, transparent 60%),
+              radial-gradient(circle at 100% 100%, #dd2a7b, transparent 60%);
+}
+
+.social-pill.fb .pill-glow {
+  background: radial-gradient(circle at 0 50%, #60a5fa, transparent 60%),
+              radial-gradient(circle at 100% 0, #1d4ed8, transparent 60%);
+}
+
+.social-pill.li .pill-glow {
+  background: radial-gradient(circle at 0 50%, #0ea5e9, transparent 60%),
+              radial-gradient(circle at 100% 0, #0f766e, transparent 60%);
+}
+
+/* Hover states */
+.social-pill:hover .pill-inner {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.9);
+  border-color: rgba(224, 231, 255, 0.95);
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.96), rgba(30, 64, 175, 1));
+}
+
+.social-pill:hover .pill-glow {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 18px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(15, 23, 42, 0.9);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
 /* Responsive */
 @media (max-width: 780px) {
+  body {
+    padding: 20px 10px;
+  }
+
   .page {
     padding: 20px 14px 22px;
     border-radius: 20px;
@@ -379,11 +572,45 @@ main {
     align-items: flex-start;
   }
 
+  .hero-right {
+    align-items: flex-start;
+  }
+
   .chibi-wrapper {
     align-self: flex-start;
   }
 
   .confidence-item {
     grid-template-columns: 90px 1fr 40px;
+  }
+
+  .social-row {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav {
+    gap: 8px;
+  }
+
+  .main-nav a {
+    font-size: 0.78rem;
+    padding: 3px 8px;
+  }
+
+  .photo-orbit {
+    width: 110px;
+    height: 110px;
+  }
+
+  .hero-photo {
+    width: 104px;
+    height: 104px;
+  }
+
+  .social-row {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
